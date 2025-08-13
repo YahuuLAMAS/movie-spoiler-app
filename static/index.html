@@ -5,6 +5,7 @@
     .spoiler-container {
       position: relative;
       display: inline-block;
+      margin-top: 15px;
     }
     .spoiler-overlay {
       position: absolute;
@@ -27,14 +28,17 @@
     .spoiler-text {
       z-index: 1;
       color: black;
+      padding: 5px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
-  <h2>Check Comment for Spoilers</h2>
-  <textarea id="comment" rows="5" cols="60"></textarea><br>
+  <h2>Movie Spoiler Detector</h2>
+  <textarea id="comment" rows="5" cols="60" placeholder="Type your comment..."></textarea><br>
   <button onclick="checkSpoiler()">Check</button>
   <div id="result"></div>
+
   <script>
     function checkSpoiler() {
       const comment = document.getElementById('comment').value;
@@ -54,17 +58,15 @@
                 Spoiler! Tap to reveal.
               </div>
             </div>
-            <script>
-            function revealSpoiler() {
-              document.getElementById('spoiler-overlay').classList.add('hide');
-            }
-            </script>
           `;
         } else {
-          html = `<div>${data.comment}</div>`;
+          html = `<div class="spoiler-text">${data.comment}</div>`;
         }
         document.getElementById('result').innerHTML = html;
       });
+    }
+    function revealSpoiler() {
+      document.getElementById('spoiler-overlay').classList.add('hide');
     }
   </script>
 </body>
