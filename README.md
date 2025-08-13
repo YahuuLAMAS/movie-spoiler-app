@@ -20,7 +20,7 @@ movie-spoiler-detector/
 ## Installation & Usage
 1. Clone this repository:
     ```
-    git clone https://github.com/YOUR_USERNAME/movie-spoiler-detector.git
+    git clone https://github.com/YahuuLAMAS/movie-spoiler-detector.git
     cd movie-spoiler-detector
     ```
 2. Install dependencies:
